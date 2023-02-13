@@ -3,8 +3,8 @@ def choose_three(text, optionA, optionB, optionC):
     Purpose:
       Given a prompt and three options, allow the user
       to choose one of the three options
-    Paramater(s):
-      text: prommpt (string)
+    Parameter(s):
+      text: prompt (string)
       optionA: the first option (string)
       optionB: the second option (string)
       optionC: the third option (string)
@@ -12,16 +12,19 @@ def choose_three(text, optionA, optionB, optionC):
       a valid user input of A or B or C (string)
     """
     print(text)
-    print("(A) " + optionA)
-    print("(B) " + optionB)
-    print("(C) " + optionC)
+    print("(a) " + optionA)
+    print("(b) " + optionB)
+    print("(c) " + optionC)
 
-    while True:
-        val = input("What is your choice (A, B, or C)? ")
-        if val == "A" or val == "B" or val == "C":
-            return val
+    valid_value = False
+    while not valid_value:
+        val = input("What is your choice (a, b, or c)? ")
+        if val == "a" or val == "b" or val == "c":
+            valid_value = True
+        else:
+            print("Invalid option, try again")
 
-        print("Invalid option, try again")
+    return val
 
 
 if __name__ == "__main__":

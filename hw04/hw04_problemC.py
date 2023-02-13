@@ -2,14 +2,14 @@
 # the choices a player can make. i used rooms instead of a storyline because
 # it was easier for me to visualize. each "room" in my case just represensts
 # the state of where the user is at in the flowchart. it looks crazy, i know.
-# but, check it out. if i wanted to know about 'room2', i could say print(choices["room2"]) and I 
+# but, check it out. if i wanted to know about 'room2', i could say print(choices["room2"]) and I
 # would get all of the data only under room2. if I wanted to know where a user would go if
-# they chose option 'c' while they were in 'room2' i could print(choices["room2"]["options"]["c"]["goes_to"]) 
+# they chose option 'c' while they were in 'room2' i could print(choices["room2"]["options"]["c"]["goes_to"])
 # which would output "room4". see how the text in the brackets just maps it to what i want to retrieve?
 # the cool part is i don't have to use the "hard coded" names, I can use another variable
 # so if a user selects option 'a' while in room1, eg, user_choice = input("make a selecttion: ") and they enter 'a'
 # i can do print(choices["room1"]["options"][user_choice]) and bam, now I know what the next
-# room they chose to go to is! if you look at the flow chart in the assignment you can notice 
+# room they chose to go to is! if you look at the flow chart in the assignment you can notice
 # how this is just a representation of it (i did room1 on the top decision, room2 on the left, room3 on the right
 # and room4 on the bottom decision).
 choices = {
@@ -21,12 +21,12 @@ choices = {
             "c": {"text": "go to room 3", "goes_to": "room3"},
         },
     },
-    "room2": { 
+    "room2": {
         "text": "You are in room two.",
-        "options": { 
+        "options": {
             "a": {"text": "to end (good)", "goes_to": True},
             "b": {"text": "to end (good)", "goes_to": True},
-            "c": {"text": "go to room 4", "goes_to": "room4"}, 
+            "c": {"text": "go to room 4", "goes_to": "room4"},
         },
     },
     "room3": {
@@ -48,7 +48,7 @@ choices = {
 }
 
 
-def make_choice(room_name):
+def adventure(room_name):
     """
     Returns:
       The name of the next room (string) or a bool representing a good or bad ending
@@ -68,28 +68,31 @@ def make_choice(room_name):
 
 
 def choose_three(text, optionA, optionB, optionC):
-    print("---------------------------")
-    print(text)
+    print("".rjust(len(text) + 4, "-"))
+    print("| " + text + " |")
+    print("".rjust(len(text) + 4, "-"))
     print("(a) " + optionA)
     print("(b) " + optionB)
     print("(c) " + optionC)
 
-    while True:
+    valid_value = False
+    while not valid_value:
         val = input("What is your choice (a, b, or c)? ")
-        # i made it lowercase bc having to tyoe uppercase is stupid
         if val == "a" or val == "b" or val == "c":
-            return val
+            valid_value = True
+        else:
+            print("Invalid option, try again")
 
-        print("** Invalid option, try again")
+    return val
 
 
 if __name__ == "__main__":
-    choice = make_choice("room1")  # start it off at the first room
+    choice = adventure("room1")  # start it off at the first room
 
-    # keep going until make_choice() isn't true or false (otherwise, 
+    # keep going until make_choice() isn't true or false (otherwise,
     # make_choice will return the name of the next room the player selected)
     while choice != True and choice != False:
-        choice = make_choice(choice)
+        choice = adventure(choice)
 
     # made it here because make_choice() returned a bool
     if choice:
