@@ -17,32 +17,50 @@ choices = {
         "text": "You are in room one.",
         "options": {
             "a": {"text": "go to room 2", "goes_to": "room2"},
-            "b": {"text": "to end (bad)", "goes_to": False},
+            "b": {"text": "go to room 5", "goes_to": "room5"},
             "c": {"text": "go to room 3", "goes_to": "room3"},
         },
     },
     "room2": {
         "text": "You are in room two.",
         "options": {
-            "a": {"text": "to end (good)", "goes_to": True},
-            "b": {"text": "to end (good)", "goes_to": True},
+            "a": {"text": "go to room 5", "goes_to": "room5"},
+            "b": {"text": "go to room 6", "goes_to": "room6"},
             "c": {"text": "go to room 4", "goes_to": "room4"},
         },
     },
     "room3": {
         "text": "You are in room three.",
         "options": {
-            "a": {"text": "to end (bad)", "goes_to": False},
+            "a": {"text": "go to room 2", "goes_to": "room2"},
             "b": {"text": "go to room 4", "goes_to": "room4"},
-            "c": {"text": "to end (good)", "goes_to": True},
+            "c": {"text": "go to room 3", "goes_to": "room3"},
+            "c": {"text": "go to room 5", "goes_to": "room5"},
+            "c": {"text": "go to room 1", "goes_to": "room1"},
         },
     },
     "room4": {
         "text": "You are in room four.",
         "options": {
-            "a": {"text": "to end (good)", "goes_to": True},
-            "b": {"text": "to end (bad)", "goes_to": False},
-            "c": {"text": "to end (bad)", "goes_to": False},
+            "a": {"text": "go to room 1", "goes_to": "room1"},
+            "b": {"text": "go to room 5", "goes_to": "room5"},
+            "c": {"text": "go to room 6", "goes_to": "room6"},
+        },
+    },
+    "room5": {
+        "text": "You are in room five.",
+        "options": {
+            "a": {"text": "go to room 1", "goes_to": "room1"},
+            "b": {"text": "go to room 2", "goes_to": "room2"},
+            "c": {"text": "go to room 6", "goes_to": "room6"},
+        },
+    },
+    "room6": {
+        "text": "You are in room six.",
+        "options": {
+            "a": {"text": "go to room 1", "goes_to": "room1"},
+            "b": {"text": "go to room 5", "goes_to": "room5"},
+            "c": {"text": "go to room 3", "goes_to": "room3"},
         },
     },
 }
