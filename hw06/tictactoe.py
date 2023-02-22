@@ -66,10 +66,7 @@ def tic_tac_toe():
         if win_symbol != "-":
             game_over = True
 
-        if player == "X":
-            player = "O"
-        else:
-            player = "X"
+        player = "O" if player == "X" else "X"
 
     return win_symbol
 
@@ -79,7 +76,7 @@ if __name__ == "__main__":
     o_wins = 0
     draws = 0
 
-    for i in range(100):
+    for i in range(1000):
         win_symbol = tic_tac_toe()
         if win_symbol == "X":
             x_wins += 1
