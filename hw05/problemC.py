@@ -1,3 +1,6 @@
+import random
+
+
 def character_search(string_a, string_b, string_c):
     str_first = ""
     for a in string_a:
