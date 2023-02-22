@@ -92,15 +92,6 @@ if __name__ == "__main__":
     print("O wins: ", o_wins)
     print("Draws: ", draws)
 
-    # board = ["-"] * 9
-    # board = ["O", "X", "O", "X", "X", "O", "X", "O", "X"]
-    tic_tac_toe()
-    # print_board(board)
-    # print(open_spots(board))
-    # random_move(board, "X")
-    # print(check_three(board, 2, 7, 8))
-    # winner(board)
-
     # winner(["X", "X", "O", "O", "X", "X", "O", "X", "O"])  # X
     # winner(["X", "-", "O", "X", "O", "-", "O", "-", "X"])  # O
     # winner(["O", "X", "O", "X", "X", "O", "X", "O", "X"])  # D
