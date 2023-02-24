@@ -228,9 +228,9 @@ if __name__ == "__main__":
 
     print_two_boards(player_board_ships, player_board_record)
 
-    #   input coord (e.g. "a1" or "d3", etc.)
-    #   check for hit or miss on computer's ship board
-    #   record hit or miss on the player's record board
+    #   1-input coord (e.g. "a1" or "d3", etc.)
+    #   2-check for hit or miss on computer's ship board
+    #   3-record hit or miss on the player's record board
     while True:
         player = "player"
         coord = get_valid_input("Coordinate of next shot? ")
