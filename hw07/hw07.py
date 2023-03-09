@@ -148,7 +148,15 @@ def blur(img_matrix):
     return new_matrix
 
 
+def mirror(img_matrix):
+    height = len(img_matrix)  # Height = # of rows, i.e. length of matrix
+    width = len(img_matrix[0])  # Width = # of columns, i.e. length of one row
+    new_matrix = copy.deepcopy(img_matrix)
 
+    for x in range(width):
+       for y in range(height):
+         new_matrix[y][width - x - 1] = new_matrix[y][x]
+    return new_matrix
 #--------------------------------------------------
 # DO NOT EDIT ANYTHING BELOW THIS LINE
 # .bmp file manipulation functions.  You don't have to understand these.
@@ -235,5 +243,5 @@ def transform_image(fname,operation):
     fp.write(bytearray(data))
     fp.close()
 
-
+transform_image("connector.bmp", "mirror")
 
