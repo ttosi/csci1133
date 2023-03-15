@@ -1,4 +1,4 @@
-from problemA_without_find import durdle_match
+from problemA import durdle_match
 
 invalid_chars = "1234567890`~!@#$%^&*()_-=+[]{}|\;':<>,./? ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
@@ -13,15 +13,15 @@ def check_valid_chars(target):
 def durdle_game(target):
     game_over = False
     num_guesses = 0
-    target_length = len(target)
+    target_len = len(target)
 
-    print("Welcome to Durdle! The target word has " + str(target_length) + " letters.")
+    print("Welcome to Durdle! The target word has " + str(target_len) + " letters.")
 
     while not game_over:
         valid_input = False
         while not valid_input:
             guess = input("Enter a guess: ")
-            if len(guess) == target_length and check_valid_chars(guess):
+            if len(guess) == target_len and check_valid_chars(guess):
                 valid_input = True
             else:
                 print("Invalid guess.")
@@ -33,6 +33,8 @@ def durdle_game(target):
         for char in guess_string:
             if char != "G":
                 guessed = False
+        # OR this way, does same thing as above just in one line
+        # guessed = guess_string == "G" * target_len
 
         if guessed == True:
             game_over = True
