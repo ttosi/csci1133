@@ -2,7 +2,6 @@ from problemA_without_find import durdle_match
 
 invalid_chars = "1234567890`~!@#$%^&*()_-=+[]{}|\;':<>,./? ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
-
 def check_valid_chars(target):
     is_valid = True
     for target_char in target:
@@ -10,7 +9,6 @@ def check_valid_chars(target):
             if target_char == invalid_char:
                 is_valid = False
     return is_valid
-
 
 def durdle_game(target):
     game_over = False
@@ -41,7 +39,6 @@ def durdle_game(target):
             print("Congratulations, you got it in " + str(num_guesses) + " guesses!")
         else:
           print("               " + guess_string)
-
 
 if __name__ == "__main__":
     durdle_game("parameter")
