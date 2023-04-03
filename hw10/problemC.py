@@ -3,6 +3,8 @@ def create_lists(file_name):
     shopping_list = {}
     for line in file:
         data = line.split(",")
+        # this is just to help keep track of what part of the line
+        # i'm using (instead of data[0], data[1], data[2])
         store = data[0]
         item = data[1]
         quantity = data[2]
