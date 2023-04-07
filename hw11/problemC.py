@@ -3,7 +3,7 @@ from hw11 import get_targets
 from problemB import two_es
 
 
-targets = get_targets("docs2")
+targets = get_targets("docs3")
 good_docs = []
 for target in targets:
     file = open(target, "r")
